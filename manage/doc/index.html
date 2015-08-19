@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Magnolia - Hotel site template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		pre,code { font-family:"Consolas", Courier New, Courier, monospace; padding:15px; background:#f7f7f7; margin:0px 0px 18px; border:1px solid #e5e5e5; line-height:18px; color:#000 }
+code { padding:0px 3px; background-image:none; background:#f5f5f5; border:none }
+pre { white-space:pre-wrap; white-space:-moz-pre-wrap; white-space:-pre-wrap; white-space:-o-pre-wrap; word-wrap:break-word }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	  <h3 class="center alt"> Documentation by &ldquo;Ansonika&rdquo; v1.4</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Magnolia HTML site template&rdquo;</h1>
+		
+		<div class="borderTop">
+		  <div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 16 July 2014<br>
+                     Last update: 18 November 2014 <br>
+					By: Ansonika<br>
+				  Email: <a href="mailto:info@ansonika.com">info@ansonika.com</a></strong>
+			  </p>
+		  </div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free contact me at <a href="mailto:info@ansonika.com">info@ansonika.com</a></p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files, Structure and basic modifications</a></li>
+<li><a href="#php">Check availability form </a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#credits">Sources and Credit</a></li>
+		</ol>
+        
+         <hr>
+         <p><strong>V1.4 6 November 2014: unclosed div for about section</strong></p>
+         <p><strong>V1.3 6 November 2014</strong><br>
+		- Respond and Hml5Shiv fixed for IE8 in the head of the page: the links provided from here <a href="http://getbootstrap.com/getting-started/">http://getbootstrap.com/getting-started/</a> should be <strong>http and not https.</strong>
+      <pre>WRONG<br>&lt;!--[if lt IE 9]&gt;<br>&lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;<br>&lt;![endif]--&gt;
+
+OK<br>&lt;!--[if lt IE 9]&gt;<br>&lt;script src=&quot;http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;<br>&lt;![endif]--&gt;<br></pre>
+        </p>
+        
+         <p><strong>V1.2 31 July 2014</strong><br>
+		- Added rooms pictures slider to the rooms sections<br>
+        - <a href="#update">Read details of the update</a><br>
+      <p><strong>V1.1 21 July 2014</strong><br>
+		- Fixed calendar double months on mobile<br>
+        - Added a form field for the room type<br>
+        - Added booking button on rooms section<br>
+        - How to change the calendar language<br>
+        - <a href="#update">Read details of the update</a><br>
+	  <hr>
+        
+        
+  <h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+	  <p> This theme has a fixed centered layout 1170px. It's based on Boostrap framework grid. It's ULTRA RESPONSIVE!!<br />
+	  </p>
+<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files Structure and basic modfication</strong> - <a href="#toc">top</a>	  </h3>
+	  <p>The css files are inside the css folder (minified versions included).</p>
+	  <ol>
+			<li><strong>jquery-ui-1.10.1.css</strong>: Basic styles for the calendat datepicker.</li>
+            <li><strong>bootstrap.css</strong>: Boostrap general styles framework (not necessary to open/edit)</li>
+            <li><strong> weather.css</strong>: Styles for the weather widget.</li>
+			<li><strong>style.css</strong>: all layout styles (mediaqueries included)</li>
+	  </ol>
+<p> To modify colors, typografy, button style ecc....find the realtive comment line in style.css. Below how the file is organized:</p>
+<p>1. SITE STRUCTURE and TYPOGRAPHY<br>
+  2. FORMS<br>
+  3. COMMON<br>
+  5. MEDIA QUERIES</p>
+<p><strong>Change the logo<br>
+  </strong>To change the logo, simply use your PNG24 file and change the width of the container #logo in style.css. Remember to create a retina version of it (that is double size-name logo@2x.png).</p>
+
+<p><strong>Change your map location</strong><br>
+Open functions.js and find this lines of code: 1) add you longitude and latitude. 2) add your complete address.</p>
+<pre>//set up markers <br>		var myMarkers = {&quot;markers&quot;: [<br>				{&quot;latitude&quot;: &quot;<strong>51.511732</strong>&quot;, &quot;longitude&quot;:&quot;<strong>-0.123270</strong>&quot;, &quot;icon&quot;: &quot;img/map-marker2.png&quot;}<br>			]<br>		};
+
+
+//set up map options<br>		$(&quot;#map&quot;).mapmarker({<br>			zoom	: 14,<br>			center	: '<strong>Covent Garden London</strong>',<br>			markers	: myMarkers<br>		});
+</pre>
+<strong>Change wheater location</strong><br> 
+      Go to <a href="http://www.weather.com/">www.weather.com</a>, in the top bar insert you city. Then from the new page, copy from the link of the page the cose (ex. UKXX0085 for LondonUK). Open functions.js and apply this code to the code lines below
+      <pre>$('#weather').weatherfeed(['<strong>SPXX0047</strong>'], {<br>		forecast: true<br>	});</pre>
+      <p><strong>Wheater location</strong> common issue<br>
+      Some towns are not supported by the scripts; it's necessary to use antoher method:
+      1) Go to <a href="http://woeid.rosselliot.co.nz/">http://woeid.rosselliot.co.nz/</a> and type your location or one near as much is possible. Copy the id that the result give.<br>
+      2) Open js/functions.js:
+      <pre>Replace these line of code (with your id):
+
+$('#weather').weatherfeed(['<strong>SPXX0047</strong>'], {<br>		forecast: true<br>	});
+
+with
+
+$('#weather').weatherfeed(['<strong>your id</strong>'], {<br>		forecast: true,
+		woeid: true<br>	});<br></pre>
+<p><strong>Change the button colors, and main typography styles</strong><br> 
+      It's all placed at the top of styles.css under the section 1.SITE STRUCTURE and TYPOGRAPHY:
+      <pre>/** Typography **/
+........
+
+/** List **/<br>.....</p>
+
+/** Links **/<br>.....</p>
+
+/** Buttons **/<br>.....</p>
+
+etc...   
+      </pre>
+      
+      <p><strong>How to add or remove disable/not available dates</strong><br> 
+      <pre>Open js/calendar_func.js ..... remove or add these lines of code (note that the month is -1):
+
+if (date.toDateString()===new Date(2014,6,11).toDateString()) {
+return [false,""]; // Don't show 11th July 2014
+}
+
+REPEAT THIS OPERATION for THE DATE CALENDAR SETTINGS FOR SIZE SCREEN  OVER 520PX
+      
+      </pre>
+      
+      
+
+      <p><strong>THE GRID</strong><br> 
+      Please refer to this <a href="http://getbootstrap.com/">documentation Boostrap</a></p>
+    
+    <hr>
+    <br>
+    <h3 id="update"><strong>UPDATE v1.2</strong></h3> How to update from previous versions:
+    <pre>1) Copy these css styles in your css folder: owl.theme.css + owl.carousel.css
+
+2) Copy these js  files in your js folder: owl.carousel.js + owl.carousel.min.js
+
+3) Copy this image in your img folder: AjaxLoader.gif
+
+5) In the head of your html page add <br>	&lt;!-- Owl Carousel Assets --&gt;<br>    &lt;link href=&quot;css/owl.carousel.css&quot; rel=&quot;stylesheet&quot;&gt;<br>    &lt;link href=&quot;css/owl.theme.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+6) Here the html of one slider: <br>&lt;div class=&quot;photo_polaroid&quot;&gt;<br> &lt;div class=&quot;carousel&quot;&gt;<br>  &lt;div class=&quot;item&quot;&gt;&lt;img src=&quot;img/room_2.jpg&quot;  alt=&quot;&quot; class=&quot;img-responsive&quot;&gt;&lt;/div&gt;<br>  &lt;div class=&quot;item&quot;&gt;&lt;img src=&quot;img/room_2.jpg&quot;  alt=&quot;&quot; class=&quot;img-responsive&quot;&gt;&lt;/div&gt;<br>  &lt;div class=&quot;item&quot;&gt;&lt;img src=&quot;img/room_2.jpg&quot;  alt=&quot;&quot; class=&quot;img-responsive&quot;&gt;&lt;/div&gt;<br> &lt;/div&gt;&lt;!-- End carousel --&gt;<br>&lt;/div&gt;
+
+7) At the bottom of the html page call the js:
+
+&lt;!-- CAROUSEL --&gt;  <br>&lt;script src=&quot;js/owl.carousel.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script&gt;<br>//Carousel<br>    $(document).ready(function(){<br>	&quot;use strict&quot;;<br>	//Carousel<br>		$(&quot;.carousel&quot;).owlCarousel({<br>		items : 1,<br>		singleItem:true,<br>		responsive:true,<br>		autoHeight : true,<br>		transitionStyle:&quot;fade&quot;<br>	});<br>});<br>&lt;/script&gt;<br>
+    </pre>
+    <strong>UPDATE v1.1</strong> - <a href="#toc">top</a></h3>
+    <p><strong>Fixed calendar double months on mobile</strong>: by defualt the theme comes with a double view month calendar that can disabled or enable via this param "numberOfMonths: 1", inside calendar_func.js. Alternatively you can use a simplified scritp ....calendar_func_single_month_view.js</p>
+      <pre>
+calendar_func.js
+
+// DATE CALENDAR SETTINGS FOR SIZE SCREEN  UNDER 520PX<br> $('#jrange div')<br>      .datepicker({<br>            showButtonPanel: true,<br>			<strong>numberOfMonths: 1,</strong><br>            beforeShowDay: function ( date ) {
+.....
+
+// DATE CALENDAR SETTINGS FOR SIZE SCREEN  OVER 520PX<br> $('#jrange div')<br>      .datepicker({<br>            showButtonPanel: true,<br>			<strong>numberOfMonths: 2,</strong><br>            beforeShowDay: function ( date ) {
+.....
+      </pre>
+      <p><strong>How to change the calendar language. Spanish and French are in in js/locale folder...if you need more language please go to <a href="https://github.com/jquery/jquery-ui/tree/master/ui/i18n">https://github.com/jquery/jquery-ui/tree/master/ui/i18n</a></strong><br> 
+      <pre>Open index.html and at the bottomo add the language file like the example below:<br>&lt;!-- JQUERY --&gt;<br>&lt;script src=&quot;js/jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;js/jquery-ui-1.10.1.min.js&quot;&gt;&lt;/script&gt;<br><strong>&lt;script src=&quot;js/locales/datepicker-fr.js&quot;&gt;&lt;/script&gt;</strong><br>&lt;script src=&quot;js/calendar_func.js&quot;&gt;&lt;/script&gt;   </pre>
+      <hr>
+      
+<br>
+      <h3 id="php"><strong>C) PHP files: Check availability form </strong> - <a href="#php">top</a></h3>
+      <p>All the files you need are located in asset folder. If you need to change the allert messages open assets/validate.js. Below an example; all the files are well commented<strong>.<br>
+      </strong><br>
+        <img src="assets/images/mail.png" alt="" width="1043" height="449" style="border:1px solid #ccc;">      </p>
+      </p>
+      <p><strong>Check availability form<br>
+        </strong> If you doesn't recieve the email please first check:<br>
+      1) Your spam folder<br>
+      2) If you hosting requires special settings<br>
+      3) If your email  has to be managed from the same hosting provider<br>
+      4) Set the permission of the asset folder on your host to 777 with your FTP client
+      </p>
+      </p>
+      <hr>
+<h3 id="javascript"><strong>D) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+	  <p>This theme use These Javascript (minified versions included).</p>
+	  <p><img src="assets/images/js.jpg" width="298" height="360" style=" border: 1px solid #ccc"></p>
+	  <hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+	  <p>I've used the following images, icons or other files as listed.
+		
+		
+	  <ul>
+        <li><a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a></li>
+        <li><a href="http://fontello.com/">Fontello</a></li>
+        <li><a href="http://gsgd.co.uk/sandbox/jquery/easing/">Jquery easing</a></li>
+        <li><a href="http://nicinabox.com/superslides/">Background images slider</a></li>
+        <li><a href="http://www.zazar.net/developers/jquery/zweatherfeed/">Weather widget</a></li>
+        <li><a href="http://jqueryui.com/datepicker/">Jquery UI Datepicker</a></li>
+        <li><a href="http://mths.be/placeholder">Jquery placeholder</a></li>
+        <li><a href="http://owlgraphic.com/owlcarousel/">Owl carousel</a></li>
+        <li><a href="http://jquery.com/">Jquery</a></li>
+	  </ul>
+		<p>Images are not included. You can buy them on Photodune.</p>
+<hr>
+<p><strong><br>
+    <img src="assets/images/avatar.jpg" width="80" height="80"><br>
+	  <br>
+    Once again, thank you so much for purchasing this theme. Please take a moment to rate it from your Downloads page.</strong><br> 
+		  
+<h3>Need support?</h3>
+For support contact me using the form on my profile page <span class="text_medium">with subject <strong>[ThemeForest Support]  Template name</strong></span>, via <a href="http://support.ansonika.com/">Support site</a> or submit a comment on item page. You will receive an answer within 24-48 hours (working days)  GMT  +1.
+<ul>
+<li>I only provide support for fixing bugs or small issues on my items.</li>
+<li>I don't provide free support for additional custom modifications to the items.</li>
+<li>Please provide your site link, screenshots and other information about your issue.</li>
+</ul>
+
+<h3>Need customization or availability for freelance projects?</h3>
+Just send an email via profile page form; please don't forget to specify:
+<ul>
+<li>if you are a company, agency or private user</li>
+<li>all the information about your projects, needs, site urls, project sheet, etc..</li>
+<li>from which country you are</li>
+<li>if you have a deadline</li>
+<li>if you have basic knowledge of  HTML , CSS, JS,  PHP</li>
+</ul>
+<p class="append-bottom alt large"><strong>Ansonika</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
